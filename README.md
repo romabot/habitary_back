@@ -1,11 +1,4 @@
 # README
 
-the Grand Habitary ---- CLONED
+The Grand Habitary ----
 
-This is the readme for HABITARY APP
-
-
-Habitary
-Habituary
-Habituarium
-Habitarium 
