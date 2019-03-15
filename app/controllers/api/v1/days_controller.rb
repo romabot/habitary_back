@@ -1,6 +1,10 @@
 class Api::V1::DaysController < ApplicationController
     def index
-      @days = Day.all
+      if params[:user_id]
+        @days = User.find(params[:user_id]).days
+      else
+          @days = Day.all
+      end
       render json: @days
     end
 
