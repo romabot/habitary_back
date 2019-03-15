@@ -3,8 +3,7 @@ Day.destroy_all
 Skill.destroy_all 
 Dayskill.destroy_all 
 
-user_1 = User.create(name: "👨‍ Jim Jones")
-user_2 = User.create(name: "👩‍ Sally Bowlman")
+
 
 day_one = Day.create(name:"🌺 Day 1", user_id:1)
 day_two = Day.create(name:"🌺 Day 2", user_id:1)
