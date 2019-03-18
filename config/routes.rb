@@ -5,6 +5,7 @@ Rails.application.routes.draw do
         resources :days
       end    
       post '/login', to: 'auth#create'
+       post '/register', to: 'users#create'
       get '/profile', to: 'users#profile'
       resources :days
       resources :dayskills
