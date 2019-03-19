@@ -1,8 +1,13 @@
 class Api::V1::SkillsController < ApplicationController
-    def index
-      @skills = Skill.all
+   
+   def index
+      if params[:user_id]
+        @skills = User.find(current_user.id).skills
+      else
+          @skills = Skill.all
+      end
       render json: @skills
-  end
+    end
 
   def show
       @skill = Skill.find(params[:id])
