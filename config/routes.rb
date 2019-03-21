@@ -3,8 +3,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users do
         resources :days
-        resources :skills 
-      end    
+      end 
       post '/login', to: 'auth#create'
        post '/register', to: 'users#create'
       get '/profile', to: 'users#profile'

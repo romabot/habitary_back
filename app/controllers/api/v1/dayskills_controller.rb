@@ -6,8 +6,8 @@ class Api::V1::DayskillsController < ApplicationController
 
 
     def create
-      @newskills = Skill.all
-       7.times do |idx|
+      @newskills = current_user.skills
+       3.times do |idx|
           Day.create(:name => "Day #{idx+1}", :user_id => current_user.id) do |day|
           
           @newskills.each do |skill|
