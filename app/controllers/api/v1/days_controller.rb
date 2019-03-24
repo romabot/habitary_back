@@ -1,9 +1,9 @@
 class Api::V1::DaysController < ApplicationController
     def index
       if params[:user_id]
-        @days = User.find(params[:user_id]).days
+        @days = User.find(params[:user_id]).days.order('id ASC')
       else
-          @days = Day.all
+          @days = Day.all.order('id ASC')
       end
       render json: @days
     end
@@ -13,28 +13,22 @@ class Api::V1::DaysController < ApplicationController
       render json: @day
     end
 
-      def create
-        @squirrel = Squirrel.create(squirrel_params) 
-        render json: @squirrel
+    def create
+        @day = Day.create(day_params) 
+        render json: @day
     end
 
 
     def update
-	    @squirrel = Squirrel.find(params[:id])
-        @squirrel.update(squirrel_params) 
-        render json: @squirrel  
-    end
-
-    def destroy
-	    @squirrel = Squirrel.find(params[:id]) 
-        @squirrel.destroy
-        render json: @squirrel
+	    @day = Day.find(params[:id])
+        @day.update(day_params) 
+        render json: @day  
     end
 
     private 
 
-    def squirrel_params
-	    params.require(:squirrel).permit(:name, :bio, :img, :caught)
+    def day_params
+	    params.require(:day).permit(:name, :completed)
     end
 
 end
