@@ -4,7 +4,6 @@ Skill.destroy_all
 Dayskill.destroy_all 
 
 
-
 day_one = Day.create(name:"🌺 Day 1", user_id:1)
 day_two = Day.create(name:"🌺 Day 2", user_id:1)
 
