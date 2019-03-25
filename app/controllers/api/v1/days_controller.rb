@@ -28,7 +28,7 @@ class Api::V1::DaysController < ApplicationController
     private 
 
     def day_params
-	    params.require(:day).permit(:name, :completed)
+	    params.require(:day).permit(:name, :completed, :feelings)
     end
 
 end
