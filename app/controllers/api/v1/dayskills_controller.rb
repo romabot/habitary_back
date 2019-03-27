@@ -1,6 +1,6 @@
 class Api::V1::DayskillsController < ApplicationController
     def index
-      @dayskills = Dayskill.all
+      @dayskills = Dayskill.all.order('id ASC')
       render json: @dayskills
     end
 
@@ -21,9 +21,23 @@ class Api::V1::DayskillsController < ApplicationController
         render json: @dayskills
     end
 
+    def update
+	    @dayskill = Dayskill.find(params[:id])
+        @dayskill.update(dayskill_params) 
+        render json: @dayskill  
+    end
+
+
   def show
       @dayskill = Dayskill.find(params[:id])
       render json: @dayskill
   end
+
+
+    private 
+
+    def dayskill_params
+	    params.require(:dayskill).permit(:completed)
+    end
 
 end
