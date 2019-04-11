@@ -20,11 +20,16 @@ class Api::V1::SkillsController < ApplicationController
 
     private
     def skill_params
-        params.require(:skill).permit(:name, :target, :user_id)
+        params.require(:skill).permit(:name, :target, :user_id, :hard)
     end
 
   def show
       @skill = Skill.find(params[:id])
       render json: @skill
   end
+
+
+
+
+
 end
