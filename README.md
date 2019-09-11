@@ -1,4 +1,7 @@
-# README
+# Habitrack :: Skill / Habit tracker (web app)
 
-The Grand Habitary ----
+Learn to do things and keep a schedule with Habitrack!
 
+## Ruby on Rails Back End ***
+
+### Prerequisites
