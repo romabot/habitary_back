@@ -2,6 +2,5 @@
 
 Learn to do things and keep a schedule with Habitrack!
 
-## Ruby on Rails Back End ***
+## Client Side: Ruby on Rails
 
-### Prerequisites
